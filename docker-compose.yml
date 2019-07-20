@@ -12,6 +12,9 @@ services:
       # If you have valid Product ID, set MSSQL_PID valiable.
       # See : https://hub.docker.com/_/microsoft-mssql-server
       #MSSQL_PID: Express
+      # Against Garbled, set to Japanese environment.
+      MSSQL_LCID: 1041
+      MSSQL_COLLATION: Japanese_CI_AS
     volumes:
       - ./data/data:/var/opt/mssql/data
       - ./data/log:/var/opt/mssql/log
