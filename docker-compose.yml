@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  # Microsoft SQL Server 2017 Linux (Developer Edition)
+  db:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    container_name: mssql2017dev
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: P@ssw0rd2017
+      #MSSQL_PID: Express
+    volumes:
+      - ./data/data:/var/opt/mssql/data
+      - ./data/log:/var/opt/mssql/log
+    ports:
+      - 14330:1433
